@@ -37,7 +37,7 @@ def makereqIpLocation(ip):
         'submit':'IP+Lookup'
     }
 
-    getres = requests.post(url,data=data,headers=headers,proxies={'http':'127.0.0.1:8080','https':'127.0.0.1:8080'},verify=False)
+    getres = requests.post(url,data=data,headers=headers,verify=False)
     if getres.status_code == 200 :
         return parseHtml(getres.text)
 
